@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>MyWebSite</title>
+    <link rel="stylesheet" href="style.css">
+
+	<style>
+	  /* プルダウンと画像用の追加スタイル */
+      select {
+          font-size: 16px;
+		  padding: 5px 10px;
+		  margin: 10px 0;
+	  }
+      /* ここで画像サイズを設定 */
+      .images img {
+		 max-width: 600px;
+		  /*object-fit: contain; /* 画像比率を維持して枠に収める */
+      }
+	</style>
+	
+	<script>
+	  function AirportWX() {
+          const airport = document.getElementById("airportSelect").value;
+          const img01 = document.getElementById("Image01");	  
+          // URLを空港コードから生成
+          img01.src = `https://www.data.jma.go.jp/airinfo/data/pict/comment/ADJH01_${airport}.png`;
+		  const img02 = document.getElementById("Image02");	  
+          // URLを空港コードから生成
+          img02.src = `https://www.data.jma.go.jp/airinfo/data/pict/taf/QMCD98_${airport}.png`;
+      }
+	  
+      // ページ読み込み時に羽田をデフォルト表示
+      window.onload = function() {
+          document.getElementById("airportSelect").value = "RJTT";
+          AirportWX();
+      }
+	</script>
+	
+</head>
+<body>
+  <header>
+    <h1>Aviation-WX</h1>
+    <p>リンクと画像</p>
+  </header>
+  
+  <main>
+	<section>
+      <h2>航空気象情報</h2>
+      <label for="airportSelect">空港を選択：</label>
+      <select id="airportSelect" onchange="AirportWX()">
+		<option value="RJCC">新千歳空港</option>
+		<option value="RJCW">稚内空港</option>
+		<option value="RJEC">旭川空港</option>
+		<option value="RJEB">紋別空港</option>
+		<option value="RJCM">女満別空港</option>
+		<option value="RJCN">中標津空港</option>
+		<option value="RJCK">釧路空港</option>
+		<option value="RJCB">帯広空港</option>
+		<option value="RJCO">札幌飛行場</option>
+		<option value="RJCH">函館空港</option>
+		<option value="RJSS">仙台空港</option>
+		<option value="RJSA">青森空港</option>
+		<option value="RJSM">三沢飛行場</option>
+		<option value="RJSR">大館能代空港</option>
+		<option value="RJSK">秋田空港</option>
+		<option value="RJSI">花巻空港</option>
+		<option value="RJSY">庄内空港</option>
+		<option value="RJSF">福島空港</option>
+		<option value="RJTT">東京国際空港</option>
+		<option value="RJAA">成田国際空港</option>
+		<option value="RJAH">百里飛行場</option>
+		<option value="RJAF">松本空港</option>
+		<option value="RJTO">大島空港</option>
+		<option value="RJGG">中部国際空港</option>
+		<option value="RJSN">新潟空港</option>
+		<option value="RJNW">能登空港</option>
+		<option value="RJNK">小松飛行場</option>
+		<option value="RJNS">静岡空港</option>
+		<option value="RJBB">関西国際空港</option>
+		<option value="RJOO">大阪国際空港</option>
+		<option value="RJOY">八尾空港</option>
+		<option value="RJBE">神戸空港</option>
+		<option value="RJBD">南紀白浜空港</option>
+		<option value="RJOA">広島空港</option>
+		<option value="RJOB">岡山空港</option>
+		<option value="RJOR">鳥取空港</option>
+		<option value="RJOH">美保飛行場</option>
+		<option value="RJOC">出雲空港</option>
+		<option value="RJOW">萩・石見空港</option>
+		<option value="RJOI">岩国飛行場</option>
+		<option value="RJDC">山口宇部空港</option>
+		<option value="RJTO">高松空港</option>
+		<option value="RJOK">高知空港</option>
+		<option value="RJOM">松山空港</option>
+		<option value="RJOS">徳島飛行場</option>
+		<option value="RJFF">福岡空港</option>
+		<option value="RJFR">北九州空港</option>
+		<option value="RJFU">長菜空港</option>
+		<option value="RJFS">佐賀空港</option>
+		<option value="RJFO">大分空港</option>
+		<option value="RJFT">熊本空港</option>
+		<option value="RJFM">宮﨑空港</option>
+		<option value="RJFK">篭島空港</option>
+		<option value="RJDT">対馬空港</option>
+		<option value="RJDB">壱岐空港</option>
+        <option value="RJFE">福江空港</option>
+        <option value="RJFG">種子島空港</option>
+		<option value="RJFC">屋久島空港</option>
+		<option value="RJKA">奄美空港</option>
+        <option value="RJKI">喜界空港</option>
+        <option value="RJKN">徳之島空港</option>
+		<option value="RJKB">沖永良部空港</option>
+		<option value="RORY">与論空港</option>
+		<option value="ROAH">那覇空港</option>
+		<option value="ROKJ">久米島空港</option>
+		<option value="RORK">北大東空港</option>
+		<option value="ROMD">南大東空港</option>
+		<option value="ROMY">宮古空港</option>
+		<option value="RORS">下地島空港</option>
+		<option value="ROIG">石垣空港</option>
+		<option value="RORT">多良間空港</option>
+		<option value="ROYN">与那国空港</option>
+      </select>
+      <div class="images">
+        <img id="Image01" src="" alt="飛行場気象解説情報">
+		<img id="Image02" src="" alt="飛行場時系列情報">
+		<img src="https://www.data.jma.go.jp/airinfo/data/pict/fbjp/fbjp.png" style="max-width:600px;">
+		<img id="jma-img" style="max-width=800" src="" alt="三十分大気解析">
+      </div>
+
+    </section>
+	<script>
+	  function Maiji() {
+		  const now = new Date();
+		  now.setUTCHours(now.getUTCHours() - 1);
+		  const year = now.getUTCFullYear();
+		  const month = String(now.getUTCMonth() + 1).padStart(2, '0');
+		  const day = String(now.getUTCDate()).padStart(2, '0');
+		  const hour = String(now.getUTCHours()).padStart(2, '0');
+		  const TIME = `${year}${month}${day}${hour}0000`;
+		  const maiji = document.getElementById("jma-img");
+		  maiji.src = `https://www.data.jma.go.jp/airinfo/data/pict/maiji/WANLC199_RJTD_${TIME}.PNG`;
+	  }
+	  Maiji();
+	</script>
+	
+	
+	<section>
+	  <img src="https://www.data.jma.go.jp/airinfo/data/pict/ajpn_cmnt/qyya87-0.png" style="max-width:400px;">
+	  <img src="https://www.data.jma.go.jp/airinfo/data/pict/ajpn_cmnt/qyya87-1.png" style="max-width:400px;">
+	  <img src="https://www.data.jma.go.jp/airinfo/data/pict/ajpn_cmnt/qyya87-2.png" style="max-width:400px;">
+	  <img src="https://www.data.jma.go.jp/airinfo/data/pict/ajpn_cmnt/qyya87-3.png" style="max-width:400px;">
+	  <img src="https://www.data.jma.go.jp/airinfo/data/pict/ajpn_cmnt/qyya87-4.png" style="max-width:400px;">
+	  <img src="https://www.data.jma.go.jp/airinfo/data/pict/ajpn_cmnt/qyya87-5.png" style="max-width:400px;">
+	  <img src="https://www.data.jma.go.jp/airinfo/data/pict/ajpn_cmnt/qyya87-6.png" style="max-width:400px;">
+	</section>
+	  
+	<section>
+      <h2>リンク集</h2>
+            <ul>
+              <li><a href="https://www.data.jma.go.jp/airinfo/data/pict/ajpn_cmnt/qyya86-0.png">全国航空気象解説報</a></li>
+            </ul>
+    </section>
+	
+    </main>
+  
+  <footer>
+    <p>© 出典：気象庁 航空気象情報</p>
+  </footer>
+</body>
+</html>
